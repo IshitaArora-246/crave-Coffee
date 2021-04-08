@@ -1,3 +1,4 @@
+import 'package:crave_coffee/screens/authenticate/register.dart';
 import 'package:crave_coffee/screens/authenticate/sign-in.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SignIn(),
+      child: Register(),
     );
   }
 }

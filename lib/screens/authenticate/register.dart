@@ -1,14 +1,14 @@
 import 'package:crave_coffee/services/auth.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
-  SignIn({Key key}) : super(key: key);
+class Register extends StatefulWidget {
+  Register({Key key}) : super(key: key);
 
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   //Text field state
   String email = "";
@@ -18,7 +18,7 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
-        title: Text("sign-in to Crave coffee",
+        title: Text("Register to Crave coffee",
             style: TextStyle(color: Colors.brown[800])),
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -30,7 +30,7 @@ class _SignInState extends State<SignIn> {
           children: [
             Row(
               children: [
-                Text("Hello Again!\nWelcome Back",
+                Text("Hello!\nSign up to\nget started",
                     style: TextStyle(
                         fontSize: 36,
                         fontWeight: FontWeight.bold,
@@ -98,7 +98,7 @@ class _SignInState extends State<SignIn> {
                           color: Colors.brown[800],
                           borderRadius: BorderRadius.circular(8)),
                       child: Center(
-                        child: Text("Sign-in",
+                        child: Text("Sign-up",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: Colors.white,
@@ -113,7 +113,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 Row(
                   children: [
-                    Text("Don't have an account? Register"),
+                    Text("Already have an account? Sign-in"),
                   ],
                 )
               ],

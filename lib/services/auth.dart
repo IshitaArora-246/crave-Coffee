@@ -1,6 +1,5 @@
 import 'package:crave_coffee/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:crave_coffee/models/user.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -8,6 +7,12 @@ class AuthService {
   //create user object based on firebaseUser
   User1 _userFromFirebaseUser(User user) {
     return user != null ? User1(uid: user.uid) : null;
+  }
+
+  // auth changed user stream
+  Stream<User1> get user {
+    // return _auth.authStateChanges().map((User user) => _userFromFirebaseUser(user));
+    return _auth.authStateChanges().map(_userFromFirebaseUser);
   }
 
   //Anonymous sign-in
@@ -27,5 +32,12 @@ class AuthService {
   //Register with email-password
 
   //Sign out
-
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      //do nothing
+      print("Erorrrrr: ${e.toString()}");
+    }
+  }
 }
