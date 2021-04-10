@@ -99,10 +99,10 @@ class _SignInState extends State<SignIn> {
                           Center(
                             child: InkWell(
                               onTap: () async {
-                                setState(() {
-                                  loading = true;
-                                });
                                 if (_formKey.currentState.validate()) {
+                                  setState(() {
+                                    loading = true;
+                                  });
                                   dynamic result =
                                       await _auth.signInWithEmailAndPassword(
                                           email, password);

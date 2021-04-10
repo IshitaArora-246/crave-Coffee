@@ -99,10 +99,10 @@ class _RegisterState extends State<Register> {
                           Center(
                             child: InkWell(
                               onTap: () async {
-                                setState(() {
-                                  loading = true;
-                                });
                                 if (_formKey.currentState.validate()) {
+                                  setState(() {
+                                    loading = true;
+                                  });
                                   dynamic result =
                                       await _auth.registerWithEmailAndPassword(
                                           email, password);
