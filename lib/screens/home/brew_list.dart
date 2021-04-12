@@ -16,6 +16,30 @@ class _BrewListState extends State<BrewList> {
       print("${brew.name}\n${brew.strength}\n${brew.sugars}");
     });
 
-    return Container();
+    return ListView.builder(
+        itemCount: brews.length,
+        itemBuilder: (context, index) {
+          return BrewTile(brew: brews[index]);
+        });
+  }
+}
+
+class BrewTile extends StatelessWidget {
+  final Brew brew;
+  BrewTile({this.brew});
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.only(top: 8),
+        child: Card(
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 25,
+                backgroundColor: Colors.brown[brew.strength],
+              ),
+              title: Text(brew.name),
+              subtitle: Text("Takes ${brew.sugars} sugar(s)"),
+            )));
   }
 }
