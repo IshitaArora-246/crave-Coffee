@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
           context: context,
           builder: (context) {
             return Container(
-                color: Colors.brown[100],
+                color: Colors.grey[50],
                 padding: EdgeInsets.symmetric(horizontal: 45, vertical: 20),
                 child: MyBottomSheet());
           });
@@ -54,7 +54,14 @@ class Home extends StatelessWidget {
                   ))
             ],
           ),
-          body: BrewList()),
+          body: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/bg.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: BrewList())),
     );
   }
 }

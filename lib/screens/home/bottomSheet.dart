@@ -86,7 +86,13 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                   Center(
                     child: InkWell(
                       onTap: () async {
-                       
+                        if (_formKey.currentState.validate()) {
+                          await DatabaseService(uid: user.uid).updateUserData(
+                              _currentSugars ?? userData.sugars,
+                              _currentName ?? userData.name,
+                              _currentStrength ?? userData.strength);
+                        }
+                        Navigator.pop(context);
                       },
                       child: Container(
                         height: 50,
