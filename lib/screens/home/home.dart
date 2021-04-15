@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
             title: Text("Crave coffee",
                 style: TextStyle(
                     color: Colors.brown[800],
-                    fontSize: 30,
+                    fontSize: 26,
                     fontWeight: FontWeight.w700)),
             elevation: 0,
             backgroundColor: Colors.transparent,
