@@ -72,7 +72,7 @@ class _RegisterState extends State<Register> {
                           SizedBox(height: 15),
                           TextFormField(
                             validator: (value) => value.length < 7
-                                ? "Length of Password should be more than 7 cahracters"
+                                ? "Length of Password should be more than 7 characters"
                                 : null,
                             decoration: InputDecoration(
                                 labelText: "Password",
